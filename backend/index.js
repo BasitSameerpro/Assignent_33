@@ -6,7 +6,8 @@ const dotenv = require("dotenv")
 const app = express()
 const Routes = require("./routes/route.js")
 
-const PORT = process.env.PORT || 5000
+const PORT = 5000;
+MONGO_URL = 'mongodb+srv://summerkhan054:01lsYFixqCZ0zU5f@cart.bpv1x.mongodb.net/?retryWrites=true&w=majority&appName=cart';
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ app.use(express.json({ limit: '10mb' }))
 app.use(cors())
 
 mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect(MONGO_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
